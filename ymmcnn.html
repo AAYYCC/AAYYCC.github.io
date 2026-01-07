@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致妮妮的浪漫告白</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ff7eb3 0%, #ff9aee 50%, #d48aff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(255, 102, 179, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 首页样式 - 新增文字标识 */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 450px;
+            gap: 30px;
+        }
+        .cover-img-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid #ff3399;
+            box-shadow: 0 0 30px rgba(255, 51, 153, 0.5);
+            background: url(https://picsum.photos/id/2370/400/400);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .cover-img-box::after {
+            content: "ymmcnn";
+            position: absolute;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399;
+            letter-spacing: 2px;
+        }
+        .cover-btn {
+            background: linear-gradient(45deg, #ff3399, #d48aff);
+            border: none;
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .cover-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 51, 153, 0.6);
+        }
+        /* 分层样式 */
+        .layer {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .layer.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .title {
+            color: #d926a9;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .nickname {
+            color: #ff3399;
+            font-style: italic;
+        }
+        .message {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        /* 多样化按钮样式 */
+        .next-btn {
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            display: block;
+        }
+        .btn-heart1 {
+            background: #ff3399;
+        }
+        .btn-heart2 {
+            background: #d48aff;
+        }
+        .btn-text {
+            background: #ff9aee;
+        }
+        .next-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 102, 179, 0.4);
+        }
+        /* 手机适配 */
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px;
+            }
+            .cover {
+                height: 350px;
+            }
+            .cover-img-box {
+                width: 150px;
+                height: 150px;
+            }
+            .cover-img-box::after {
+                font-size: 20px;
+            }
+            .title {
+                font-size: 26px;
+            }
+            .message {
+                font-size: 16px;
+            }
+            .next-btn {
+                padding: 10px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 首页（带ymmcnn文字标识） -->
+        <div class="layer active" id="cover">
+            <div class="cover">
+                <div class="cover-img-box"></div>
+                <button class="cover-btn" onclick="nextLayer('cover')">点击解锁惊喜 💌</button>
+            </div>
+        </div>
+
+        <!-- 第一层 -->
+        <div class="layer" id="layer1">
+            <h1 class="title">致可爱的<span class="nickname">妮妮</span></h1>
+            <p class="message">
+                妮妮，陈婧琰，当我喊出这两个名字时，一切都很美好，这个既熟悉又陌生的名字，刚认识的时候，你不叫这个名字，陈蓉在我心里可能熟悉得都叫习惯了，突然你说你改名字了，我就像输入法一样感到了陌生，但是内心还是一样的未曾变过，我一直觉得你是世间所有美好的词汇，都不及你笑起来的模样鲜活。你像一颗甜甜的糖果，撞进我平平无奇的生活，让每一个平凡的日子都有了甜甜的盼头。
+            </p >
+            <button class="next-btn btn-heart1" onclick="nextLayer(1)">❤️ 下一页 ❤️</button>
+        </div>
+
+        <!-- 第二层 -->
+        <div class="layer" id="layer2">
+            <h1 class="title">命运同频的人</h1>
+            <p class="message">
+                同频的人，像是礼物，有人说：“所有的相遇都是阔别已久的情意。”所以，我相信命中的每一场相遇都是命中注定的，不论好与坏都值得感谢。以前一直觉得两个人相处开心就好其他都无关紧要，可慢慢发现相处除了开心同频也很重要，不用费心思去讨好，也不用努力去解释自己想表达的意思，也许兴趣不完全相同，但笑点一定是在一个频道上。爱在同一频率，相遇也是相愈。我是一个分享欲比较强的人，我喜欢把我看到好玩的事分享给你，你总是第一时间给我想要的回应，同频的人，像是礼物，就是你懂我的胡言乱语，我懂你的可可爱爱。我们彼此坦诚，这样的你，得一人，足矣。
+            </p >
+            <button class="next-btn btn-heart2" onclick="nextLayer(2)">❤️❤️ 继续解锁 ❤️❤️</button>
+        </div>
+
+        <!-- 第三层 -->
+        <div class="layer" id="layer3">
+            <h1 class="title">认识的夏日</h1>
+            <p class="message">
+                妮妮，我不知道未来会有什么样的结果，但我知道，只要每天能和你分享生活，我就很开心，我想和你一起再经历25年的夏天，那是我们的开始，也是最最最快乐的时光。
+            </p >
+            <button class="next-btn btn-text" onclick="nextLayer(3)">还有惊喜哦 ✨</button>
+        </div>
+
+        <!-- 第四层 -->
+        <div class="layer" id="layer4">
+            <h1 class="title">缘分</h1>
+            <p class="message">
+                冬天时节，天气寒冷，妮妮也要好好照顾自己，始于夏，周而复始，该相逢的人终究会相逢，是老天安排的，缘分这东西妙不可言，所以我们不必遗憾，而是学会成长，懂得取舍和期待。
+            </p >
+            <button class="next-btn btn-heart1" onclick="nextLayer(4)">❤️ 最后一页 ❤️</button>
+        </div>
+
+        <!-- 第五层 -->
+        <div class="layer" id="layer5">
+            <h1 class="title">2026发发发</h1>
+            <p class="message">
+                今天2026年，新的一年，希望妮妮平平安安，永远幸福永远快乐，永远没有无辜的泪水，希望新的一年，顺顺利利的同时发大财，愿我们在寒冷的冬天都能被好事温暖，新年快乐，To妮妮。
+            </p >
+            <div style="font-size: 50px; color: #ff3399; margin-top: 20px;">❤️❤️❤️❤️❤️</div>
+            <p style="color: #d926a9; font-size: 20px; margin-top: 20px;">岁岁年年，皆有你 💖</p >
+        </div>
+    </div>
+
+    <script>
+     
