@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致妮妮的浪漫告白</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ff7eb3 0%, #ff9aee 50%, #d48aff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(255, 102, 179, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .layer {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .layer.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .title {
+            color: #d926a9;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .nickname {
+            color: #ff3399;
+            font-style: italic;
+        }
+        .message {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .heart-btn {
+            background: #ff3399;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            display: block;
+        }
+        .heart-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 51, 153, 0.6);
+        }
+        /* 手机适配 */
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px;
+            }
+            .title {
+                font-size: 26px;
+            }
+            .message {
+                font-size: 16px;
+            }
+            .heart-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 第一层 -->
+        <div class="layer active" id="layer1">
+            <h1 class="title">致我的<span class="nickname">妮妮</span></h1>
+            <p class="message">
+                妮妮，陈婧琰，当我喊出这两个名字时，一切都很美好，这个既熟悉有陌生的名字，刚认识的时候，你不叫这个名字，陈蓉在我心理可能熟悉得都叫习惯了，突然你说你改名字了，我就像输入法一样感到了陌生，但是内心还是一样的未曾变过，我一直觉得你是世间所有美好的词汇，都不及你笑起来的模样鲜活。你像一颗甜甜的糖果，撞进我平平无奇的生活，让每一个平凡的日子都有了甜甜的盼头。
+            </p >
+            <button class="heart-btn" onclick="nextLayer(1)">❤️</button>
+        </div>
+
+        <!-- 第二层 -->
+        <div class="layer" id="layer2">
+            <h1 class="title">关于喜欢你</h1>
+            <p class="message">
+                同频的人，像是礼物，有人说：“所有的相遇都是阔别已久的情意。“所以，我相信命中的每一场相遇都是命中注定的，不论好与坏都值得感谢。以前一直觉得两个人相处开心就好其他都无关紧要，可慢慢发现相处除了开心同频也很重要，不用费心思去讨好，也不用努力去声解自己想表达的意思，也许兴趣不完全相同,但笑点一定是在一个频道上。爱在同一次率，相遇也是相愈。我是一个分享欲比较强的人,我喜欢把我看到好玩的事分享给你你总是第一时间给我想要的回应同欤的人，像是礼物，就是你懂我的胡言乱语，我懂你的可可爱爱。我们彼此坦城，这样的你，得一人，足实。
+            </p >
+            <button class="heart-btn" onclick="nextLayer(2)">❤️</button>
+        </div>
+
+        <!-- 第三层 -->
+        <div class="layer" id="layer3">
+            <h1 class="title">余生都是你</h1>
+            <p class="message">
+                妮妮，我不知道未来会有什么样的结果，但我知道，只要每天能和你分析生活，我就很开心，我想和你一起再经历25年的夏天，那是我们的开始，也是最最最快乐的时光。
+            </p >
+            <div style="font-size: 50px; color: #ff3399; margin-top: 20px;">❤️❤️❤️</div>
+        </div>
+    </div>
+            </p >
+            <button class="heart-btn" onclick="nextLayer(1)">❤️</button>
+        </div>
+
+        <!-- 第四层 -->
+        <div class="layer" id="layer4">
+            <h1 class="title">关于喜欢你</h1>
+            <p class="message">
+                    冬天时节，天气寒冷，妮妮也要好好照顾自己，始于夏，周而复始，该相逢的人终究会相逢，是老天安排的，缘分这东西妙不可言，所以我们不必点击遗憾，而是学会成长，懂得取舍和期待。
+            </p >
+            <div style="font-size: 50px; color: #ff3399; margin-top: 20px;">❤️❤️❤️</div>
+        </div>
+    </div>
+            </p >
+            <button class="heart-btn" onclick="nextLayer(1)">❤️</button>
+        </div>
+
+        <!-- 第五层 -->
+        <div class="layer" id="layer5">
+            <h1 class="title">关于喜欢你</h1>
+            <p class="message">
+          今天2026年，新的一年，希望妮妮平平安安，永远幸福永远快乐，永远没有无辜的泪水，希望新的一年，顺顺利利的同时发大财，愿我们在寒冷的冬天都能被好事温暖，新年快乐，To妮妮。
+    <script>
+        function nextLayer(currentLayer) {
+            // 隐藏当前层
+            document.getElementById(`layer${currentLayer}`).classList.remove('active');
+            // 显示下一层
+            const next = currentLayer + 1;
+            if (document.getElementById(`layer${next}`)) {
+                document.getElementById(`layer${next}`).classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
